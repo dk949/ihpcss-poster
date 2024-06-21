@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+    counter-reset: figure section ref;
+}
+
+
+h2 {
+    @apply font-bold text-xl text-center text-slate-900;
+}
+
+
+ul {
+    @apply list-disc list-outside ml-8;
+}
+
+ul ul {
+    @apply list-[circle];
+}
+
+section {
+    @apply border-yellow-400 border-2 p-2 pl-4 break-inside-avoid;
+    position: relative;
+}
+
+section::before {
+    counter-increment: section;
+    content: counter(section) ".";
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+
+    @apply font-bold text-yellow-900 text-lg mt-1 ml-2 mr-1 px-1;
+}
+
+strong {
+    @apply font-semibold;
+}
+
+figure {
+    @apply w-fit mx-auto outline-current outline-2 outline p-2 text-sm;
+
+    /* pre { */
+    /*     @apply text-xs; */
+    /* } */
+}
+
+figcaption {
+    @apply font-light w-fit mx-auto;
+}
+
+figcaption::before {
+    counter-increment: figure;
+    content: "Fig. " counter(figure) ": ";
+    @apply font-semibold;
+}
+
+:not(pre)>code {
+    @apply bg-slate-200 px-1;
+}
+
+
+/* Code :( */
+
+pre {
+
+    [kwd] {
+        @apply text-purple-800;
+    }
+
+    [type] {
+        @apply text-amber-500;
+    }
+
+    [fn] {
+        @apply text-blue-500;
+    }
+
+    [mem] {
+        @apply text-emerald-900;
+    }
+}
+
+
+
+.references {
+    ul {
+        @apply list-none list-outside m-0 pl-8 pr-2;
+
+        li {
+            counter-increment: ref;
+
+        }
+
+        ::marker {
+            content: "[" counter(ref)"] ";
+        }
+
+    }
+}
+
+@page {
+    size: A4 landscape;
+    margin: 0;
+}
