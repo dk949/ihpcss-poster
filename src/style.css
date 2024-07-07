@@ -7,6 +7,34 @@ html {
     counter-reset: figure section ref;
 }
 
+body {
+    transform-origin: bottom left;
+    scale: 1;
+    translate: 0% 0%;
+    transition-property: translate scale;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+}
+
+body:has(.slide-1:focus) {
+    scale: 260%;
+    translate: -40% 113%;
+}
+
+body:has(.slide-2:focus) {
+    scale: 260%;
+    translate: -40% 20%;
+}
+
+body:has(.slide-3:focus) {
+    scale: 230%;
+    translate: -100% 85%;
+}
+
+body:has(.slide-4:focus) {
+    scale: 260%;
+    translate: -120% 10%;
+}
 
 h2 {
     @apply font-bold text-xl text-center text-slate-900;

@@ -42,6 +42,13 @@ TODO:
 
 <body class="h-full screen:flex screen:items-center screen:justify-center">
 
+  <div tabindex="1" class="sr-only"></div>
+  <div tabindex="2" class="sr-only slide-1"></div>
+  <div tabindex="3" class="sr-only slide-2"></div>
+  <div tabindex="4" class="sr-only slide-3"></div>
+  <div tabindex="5" class="sr-only slide-4"></div>
+  <div tabindex="6" class="sr-only"></div>
+
   <div class="| p-[1cm] overflow-scroll grid
               | print:w-full print:h-full
               | screen:w-[29.7cm] screen:h-[21.0cm]
@@ -52,7 +59,7 @@ TODO:
         scientific HPC applications</h1>
       <address class="text-xs self-end">
         <p>Davids Kacs</p>
-        <a rel="author" href="mailto:d.kacs@sms.ed.ac.uk">d.kacs@sms.ed.ac.uk</a>
+        <a tabindex="-1" rel="author" href="mailto:d.kacs@sms.ed.ac.uk">d.kacs@sms.ed.ac.uk</a>
         <p>EPCC, University of Edinburgh</p>
       </address>
     </header>
@@ -72,7 +79,7 @@ TODO:
               <ul>
                 <li>Accelerator device for machine learning</li>
                 <li><strong>Can we use it to accelerate anything else?</strong></li>
-                <li>Architecture <a href="#cerebras">[1]</a>:
+                <li>Architecture <a tabindex="-1" href="#cerebras">[1]</a>:
                   <ul>
                     <li>850,000 cores</li>
                     <li>On-chip network</li>
@@ -85,7 +92,7 @@ TODO:
             <div>
               <h2>CSL</h2>
               <ul>
-                <li>Language for programming the CS-2 <a href="#csl">[2]</a></li>
+                <li>Language for programming the CS-2 <a tabindex="-1" href="#csl">[2]</a></li>
                 <li><strong>Unfamiliar to HPC developers</strong></li>
                 <li>Low level details have to be managed by the user
                   <ul>
@@ -133,14 +140,16 @@ TODO:
               <h2>MLIR - a possible solution</h2>
               <ul>
                 <li>Making the system programmable in an <strong>established language</strong> would make it
-                  <strong>easier to use</strong> and utilise <strong>developer time more effectively</strong></li>
+                  <strong>easier to use</strong> and utilise <strong>developer time more effectively</strong>
+                </li>
                 <li>This requires a new compiler</li>
-                <li>MLIR compiler framework - part of the LLVM project <a href="#llvm">[3]</a></li>
+                <li>MLIR compiler framework - part of the LLVM project <a tabindex="-1" href="#llvm">[3]</a></li>
                 <ul>
                   <li>Composable and extensible</li>
-                  <li>Provides reusable high level optimisations like xDSL's stencil dialect <a href="#stencil">[4]</a></li>
+                  <li>Provides reusable high level optimisations like xDSL's stencil dialect <a tabindex="-1"
+                      href="#stencil">[4]</a></li>
                 </ul>
-                <li>xDSL - MLIR recreated in Python <a href="#xdsl">[5]</a>
+                <li>xDSL - MLIR recreated in Python <a tabindex="-1" href="#xdsl">[5]</a>
                   <ul>
                     <li>Focussed on <strong>prototyping</strong></li>
                   </ul>
@@ -209,7 +218,8 @@ TODO:
             <ul>
               <li>Complete lowering from stencil MLIR to CSL code</li>
               <li>Adapt this lowering to CSLC MLIR</li>
-              <li>Use Flang <a href="#flang">[6]</a> as a frontend in the pipeline to compile Fortran for the CS-2</li>
+              <li>Use Flang <a tabindex="-1" href="#flang">[6]</a> as a frontend in the pipeline to compile Fortran for
+                the CS-2</li>
               <li>Benchmark both implementations on a range of stencil codes</li>
             </ul>
           </section>
@@ -222,25 +232,26 @@ TODO:
               </li>
               <li id="csl">Cerebras. (2024). <cite>Documentation for Developing with CSL</cite>
                 [Online]. Available:
-                <a href="https://sdk.cerebras.net/">https://sdk.cerebras.net/</a>
+                <a tabindex="-1" href="https://sdk.cerebras.net/">https://sdk.cerebras.net/</a>
               </li>
               <li id="llvm">LLVM Foundation. (2024). <cite>Multi-Level Intermediate Representation Overview</cite>
                 [Online]. Available:
-                <a href="https://mlir.llvm.org/">https://mlir.llvm.org/</a>
+                <a tabindex="-1" href="https://mlir.llvm.org/">https://mlir.llvm.org/</a>
               </li>
               <li id="stencil">E. Bauer (Jun. 2024). <cite>stencil.py</cite> [source code].
-                <a href="https://github.com/xdslproject/xdsl/blob/main/xdsl/dialects/stencil.py">https://github.com/xdslproject/xdsl/blob/main/xdsl/dialects/stencil.py
+                <a tabindex="-1"
+                  href="https://github.com/xdslproject/xdsl/blob/main/xdsl/dialects/stencil.py">https://github.com/xdslproject/xdsl/blob/main/xdsl/dialects/stencil.py
                 </a>.
               </li>
               <li id="xdsl">xDSL project. (2024).
                 <cite>A Python-Native Compiler Toolkit</cite>
                 [Online]. Available:
-                <a href="https://xdsl.dev/">https://xdsl.dev/</a>
+                <a tabindex="-1" href="https://xdsl.dev/">https://xdsl.dev/</a>
               </li>
               <li id="flang">LLVM Foundation. (2024).
                 <cite>The Flang Compiler</cite>
                 [Online]. Available:
-                <a href="https://flang.llvm.org/docs/">https://flang.llvm.org/docs/</a>
+                <a tabindex="-1" href="https://flang.llvm.org/docs/">https://flang.llvm.org/docs/</a>
               </li>
             </ul>
           </section>
